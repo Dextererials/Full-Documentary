@@ -1,0 +1,45 @@
+﻿<ContentDialog
+    x:Class="Full_Documentary.AddVideos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Full_Documentary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Add Video"
+    SecondaryButtonText="Done"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="titleTextBox" PlaceholderText="Title" Height="60"/>
+            <TextBox Name="IMGTextBox" PlaceholderText="IMG PATH" Height="60"/>
+            <TextBox Name="VideoTextBox" PlaceholderText="VIDEO PATH" Height="60"/>
+            <TextBox Name="descriptionTextBox" PlaceholderText="Descripton" Height="60"/>
+            <ComboBox Name="genreComboBox" SelectedIndex="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_1"   Text="Technology" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"     />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_5"  Text="Science" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_2" Text="Sports" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_3" Text="Society" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_7" Text="Psychology" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_8"  Text="Politics" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_9"  Text="Philosophy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_10"  Text="Performing Arts" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_11"  Text="Nature" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_12"  Text="Mystery" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_14"  Text="Media" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_15"  Text="History" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_16"  Text="Health" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_17"  Text="Environment" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_18"  Text="Economics" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_21"  Text="Conspiriacy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_22"  Text="Comedy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_23"  Text="Biography" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_24"  Text="Art and Artists" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_25"  Text="9/11" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MainPageFontSize}"    />
+            </ComboBox>
+            <Button Content="Submit" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</ContentDialog>

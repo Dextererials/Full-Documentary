@@ -1,0 +1,107 @@
+﻿<Page
+    x:Class="Full_Documentary.FavoritesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Full_Documentary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <local:DesktopDataTemplateSelector x:Key="TemplateSelector" DesktopAdTemplate="{StaticResource DesktopGridViewAds}"   DocumentaryItemTemplate="{StaticResource DesktopGenreItemTemplate}"/>
+
+        <DataTemplate x:Key="DesktopGenreItemTemplate">
+            <Grid VerticalAlignment="Stretch" Height="250" Width="250" HorizontalAlignment="Stretch" >
+
+                <Grid.Background>
+                    <ImageBrush Stretch="Uniform"  ImageSource="{Binding ImagePath}"/>
+                </Grid.Background>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.Column="0"  Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Black" >
+                    <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"   Text="{Binding Title}" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource TextblockForegroundColor}" />
+                </Border>
+
+
+                <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <AppBarButton Icon="More" Grid.Column="1" Style="{StaticResource PivotTitleContentControlStyle}"  Width="40" Height="40"  HorizontalAlignment="Center" Background="#006699"  VerticalAlignment="Center" Foreground="{StaticResource TextblockForegroundColor}" >
+
+                        <AppBarButton.Flyout>
+                            <Flyout>
+                                <Grid Height="Auto" Width="300">
+                                    <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center"   Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" Foreground="Black"/>
+                                </Grid>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+
+                    <AppBarButton Icon="Favorite" Width="40" Style="{StaticResource PivotTitleContentControlStyle}"  Foreground="{Binding IsFavorites}" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#006699" Click="ChangeFavorites_Clicked" />
+                </StackPanel>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DesktopGridViewAds">
+            <UI:AdControl 
+                                      ApplicationId="{StaticResource ResourceKey=AdApplicationId}"
+                                      AdUnitId="{StaticResource ResourceKey=AdUnitId}"
+                                      Visibility="{Binding DISPLAYADS,Converter={StaticResource ResourceKey=BooleanToVisibilityConverter},Mode=OneWay}"
+                                      HorizontalAlignment="Center"
+                                      Height="250"
+                                      VerticalAlignment="Center"
+                                      Width="300">
+                <UI:AdControl.DataContext>
+                    <local:AdvertisingClass/>
+                </UI:AdControl.DataContext>
+            </UI:AdControl>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <GridView  Grid.Row="1" ItemTemplateSelector="{StaticResource TemplateSelector}" VerticalAlignment="Stretch" SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" HorizontalAlignment="Stretch" ItemsSource="{Binding FavoritesItems}" >
+
+
+            <GridView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"   Text="Favorites" Style="{StaticResource HeaderTextBlockStyle}" Foreground="{StaticResource TextblockForegroundColor}" />
+                </DataTemplate>
+            </GridView.HeaderTemplate>
+
+         
+
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Height" Value="250"/>
+                    <Setter Property="Width" Value="250"/>
+                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Background" Value="#006699"/>
+                </Style>
+            </GridView.ItemContainerStyle>
+
+            <GridView.FooterTemplate>
+                <DataTemplate>
+                    <UI:AdControl x:Name="HomePageHeaderAd"
+                                      ApplicationId="{StaticResource ResourceKey=AdApplicationId}"
+                                      AdUnitId="{StaticResource ResourceKey=AdUnitId}"
+                                      Visibility="{Binding DISPLAYADS,Converter={StaticResource ResourceKey=BooleanToVisibilityConverter},Mode=OneWay}"
+                                      HorizontalAlignment="Center"
+                                      Height="90"
+                                      VerticalAlignment="Center"
+                                      Width="728">
+                        <UI:AdControl.DataContext>
+                            <local:AdvertisingClass/>
+                        </UI:AdControl.DataContext>
+                    </UI:AdControl>
+                </DataTemplate>
+            </GridView.FooterTemplate>
+        </GridView>
+    </Grid>
+</Page>

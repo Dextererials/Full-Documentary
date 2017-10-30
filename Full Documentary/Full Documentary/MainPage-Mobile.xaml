@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="Full_Documentary.MainPage_Mobile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Full_Documentary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Name="GenreComboBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Genres" FontFamily="Sitka Text" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="ComboBox_SelectionChanged">
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_1"   Text="Technology" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"     />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_5"  Text="Science" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_2" Text="Sports" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_3" Text="Society" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_6"  Text="Religion" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_7" Text="Psychology" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_8"  Text="Politics" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_9"  Text="Philosophy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_10"  Text="Performing Arts" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_11"  Text="Nature" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_12"  Text="Mystery" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_14"  Text="Media" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_15"  Text="History" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_16"  Text="Health" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_17"  Text="Environment" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_18"  Text="Economics" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_21"  Text="Conspiriacy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_22"  Text="Comedy" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_23"  Text="Biography" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_24"  Text="Art and Artists" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch" Name="Group_25"  Text="9/11" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="{StaticResource ResourceKey=MobileMainPageFontSize}"    />
+        </ComboBox>
+
+        <AppBarButton Grid.Row="0" Grid.Column="1" Icon="More"  Label="Extra" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Black" Foreground="{StaticResource TextblockForegroundColor}" FontFamily="Sitka Text" >
+            <AppBarButton.Flyout>
+                <Flyout>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Button Height="40"  HorizontalAlignment="Stretch" Content="Favorites" Background="#006699"  Margin="5"  Click="Favorites_Clicked"/>
+                        
+                        <Button Height="40"  HorizontalAlignment="Stretch" Background="#006699" Visibility="{Binding IsRemoveBannerAdsVisable}" Margin="5"  Click="RemoveBannerAds_Clicked">
+
+                            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch"   Text="Remove Banner Ads" Style="{StaticResource CaptionTextBlockStyle}"     />
+
+                            <Button.DataContext>
+                                <local:AdvertisingClass/>
+                            </Button.DataContext>
+                        </Button>
+
+                        <Button Height="40"  HorizontalAlignment="Stretch" Background="#006699" Visibility="{Binding IsRemoveVideoAdsVisable}" Margin="5"  Click="RemoveVideoAds_Clicked">
+
+                            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch"   Text="Remove Video Ads" Style="{StaticResource CaptionTextBlockStyle}"     />
+
+                            <Button.DataContext>
+                                <local:AdvertisingClass/>
+                            </Button.DataContext>
+                        </Button>
+
+                        <Button Height="40"  HorizontalAlignment="Stretch" Background="#006699"  Margin="5"  Click="Support_Us_Clicked">
+
+                            <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Stretch"   Text="Support Us"      />
+
+                        </Button>
+
+                        <Button Height="40"  HorizontalAlignment="Stretch" Content="About" Background="#006699"  Margin="5"  Click="About_Clicked"/>
+                    </StackPanel>
+                </Flyout>
+            </AppBarButton.Flyout>
+        </AppBarButton>
+
+        <SplitView Grid.Row="1" Grid.ColumnSpan="2"   DisplayMode="Inline" IsPaneOpen="False" Content="{Binding}" />
+
+      
+    </Grid>
+</Page>

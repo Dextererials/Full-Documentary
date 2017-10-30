@@ -1,0 +1,113 @@
+﻿<Page
+    x:Class="Full_Documentary.FavoritesPage_Mobile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Full_Documentary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <local:MobileDataTemplateSelector x:Key="TemplateSelector"  MobileAdTemplate="{StaticResource MobileGridViewAds}" MobileItemTemplate="{StaticResource MobileGenreItemTemplate}"  />
+
+        <DataTemplate x:Key="MobileGenreItemTemplate">
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxHeight="100" Margin="5" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Stretch="Uniform" Source="{Binding ImagePath}" Margin="5" MinWidth="100" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Column="1" Margin="5" FontFamily="Sitka Text" FontSize="12"  TextWrapping="Wrap" TextTrimming="CharacterEllipsis" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontWeight="Light"   Text="{Binding Title}"  Foreground="{StaticResource TextblockForegroundColor}" />
+
+
+                <AppBarButton Grid.Column="2" Margin="5" Background="Black"  Icon="More"  Width="40" Height="40"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="{Binding IsFavorites}" >
+
+                    <AppBarButton.Flyout>
+                        <Flyout>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <AppBarButton Background="Black" FontFamily="Sitka Text" FontSize="8" Label="Add To Favorites" Margin="5" Icon="Favorite" Foreground="{Binding IsFavorites}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Click="ChangeFavorites_Clicked" />
+
+                                <AppBarButton Icon="More" Margin="5" FontFamily="Sitka Text" FontSize="5" Label="Info" Background="Black" Foreground="{StaticResource TextblockForegroundColor}" >
+                                    <AppBarButton.Flyout>
+                                        <Flyout>
+                                            <Grid Height="Auto" Width="300">
+                                                <TextBlock  FontFamily="Sitka Text"  TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center"   Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" Foreground="Black"/>
+                                            </Grid>
+                                        </Flyout>
+                                    </AppBarButton.Flyout>
+                                </AppBarButton>
+                            </StackPanel>
+                        </Flyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+
+
+
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MobileGridViewAds">
+            <UI:AdControl 
+                                      ApplicationId="{StaticResource ResourceKey=AdApplicationId}"
+                                      AdUnitId="{StaticResource ResourceKey=AdUnitId}"
+                                      Visibility="{Binding DISPLAYADS,Converter={StaticResource ResourceKey=BooleanToVisibilityConverter},Mode=OneWay}"
+                                      HorizontalAlignment="Center"
+                                      Height="250"
+                                      VerticalAlignment="Center"
+                                      Width="300">
+                <UI:AdControl.DataContext>
+                    <local:AdvertisingClass/>
+                </UI:AdControl.DataContext>
+            </UI:AdControl>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="Transparent">
+        <ListView  ItemTemplateSelector="{StaticResource TemplateSelector}"  VerticalAlignment="Stretch" SelectionMode="None" IsItemClickEnabled="True" ItemClick="ListView_ItemClick" HorizontalAlignment="Stretch" ItemsSource="{Binding FavoritesItems}" >
+
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Grid.Column="1" Margin="5" FontFamily="Sitka Text" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold"   Text="Favorites" Style="{StaticResource HeaderTextBlockStyle}" Foreground="{StaticResource TextblockForegroundColor}"  />
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemContainerStyle >
+                <Style TargetType="ListViewItem"  >
+                    <Setter Property="Background" Value="#0072BB"/>
+                    <Setter Property="Opacity" Value=".9"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+
+            </ListView.ItemContainerStyle>
+
+
+
+            <ListView.FooterTemplate>
+                <DataTemplate>
+                    <UI:AdControl x:Name="HomePageHeaderAd"
+                                      ApplicationId="{StaticResource ResourceKey=AdApplicationId}"
+                                      AdUnitId="{StaticResource ResourceKey=AdUnitId}"
+                                      Visibility="{Binding DISPLAYADS,Converter={StaticResource ResourceKey=BooleanToVisibilityConverter},Mode=OneWay}"
+                                      HorizontalAlignment="Center"
+                                      Height="250"
+                                      VerticalAlignment="Center"
+                                      Width="300">
+                        <UI:AdControl.DataContext>
+                            <local:AdvertisingClass/>
+                        </UI:AdControl.DataContext>
+                    </UI:AdControl>
+                </DataTemplate>
+            </ListView.FooterTemplate>
+        </ListView>
+    </Grid>
+</Page>
