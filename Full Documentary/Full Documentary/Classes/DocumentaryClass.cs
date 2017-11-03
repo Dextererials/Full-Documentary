@@ -282,7 +282,7 @@ namespace Full_Documentary
             MovieDataSource movieSource = new MovieDataSource();
 
 
-            XDocument xdoc = await Internet.RequestContent("http://topdocumentaryfilms.com/watch-online/");
+            XDocument xdoc = await Internet.RequestContent("LINK");
 
             var genreList = xdoc.Descendants("article").Descendants("div").ToList(); // list for all the genre 
 
